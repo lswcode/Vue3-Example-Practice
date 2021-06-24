@@ -6,6 +6,7 @@ import Page3 from "@/views/Page3.vue";
 import Page4 from "@/views/Page4.vue";
 import Page5 from "@/views/Page5.vue";
 import Page6 from "@/views/Page6.vue";
+import Page7 from "@/views/Page7.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -46,6 +47,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/p6",
     name: "Page6",
     component: Page6,
+  },
+  {
+    path: "/p7",
+    name: "Page7",
+    component: Page7,
   },
 ];
 
