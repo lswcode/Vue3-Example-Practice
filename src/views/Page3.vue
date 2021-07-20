@@ -24,11 +24,12 @@
                 firstName: '东方',
                 lastName: '不败',
             })
-            const fullName1 = computed(() => { //用一个变量接收计算后的值，然后写进模板，与vue2差不多
+            // computed 计算属性
+            const fullName1 = computed(() => { //用一个变量接收计算后的值，然后写进模板
                 return user.firstName + '77777' + user.lastName
             })
             // --------------------------------------------------------------------------
-            let text = ref('原始文字') // 这个和之前的那些变量都是在声明的同时就赋值，此时会自动类型推断，所以可以不手动写类型
+            let text = ref('原始文字') // 这个和之前的那些变量都是在声明的同时就赋值，此时会自动类型推断，所以不用手动写类型
 
             const change = () => {
                 text.value = '发生改变'

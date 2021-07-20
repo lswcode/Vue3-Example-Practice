@@ -39,10 +39,10 @@
                 age: 27,
             })
 
-            // const {name,age} = toRefs(stateToRefs) // toRefs处理的必须是响应式对象！
+            // const {name,age} = toRefs(stateToRefs) // toRefs处理的必须是响应式对象！toRefs实际上是把目标变成了ref响应式数据
             // const changeToRefs = function () {
             //     name.value += 'toRefs' // 注意：因为每个对象属性都变成了ref处理的响应式数据，所以要加上.value
-            //     age.value += 100 // 虽然上面的name，age是const定义的，但是.value是对象的属性，即便是常量定义的，也可以更改
+            //     age.value += 100 
             // }
 
             const changeToRefs2 = function () {
@@ -54,10 +54,10 @@
 
             const change = function () {
                 state.name += '变化'
-                console.log(state); //返回的是 Proxy {name: "小白变化", age: 24} 这是响应式代理对象
+                console.log(state); //返回的是: Proxy {name: "小白变化", age: 24}  这是响应式代理对象,Proxy是代理的意思，表示数据是代理对象
                 console.log({
-                    ...state // 这样写返回的才是正常对象格式
-                })
+                    ...state
+                }) // 这样写返回的才是正常对象格式
 
             }
             return {
@@ -66,9 +66,10 @@
                 // name, 
                 // age,
                 // changeToRefs
-                //直接使用 ...state 不是响应式的数据
-                // 最简单的方法
-                ...toRefs(stateToRefs), // 这样就可以直接在模板中使用 name，age了
+                //直接使用 ...state 不是响应式的数据，因为state整个对象才是响应式数据，扩展运算符提取出的单个属性是不能直接作为响应式数据使用，只能state.xx来使用
+                ...toRefs(
+                    stateToRefs
+                    ), // 这样就可以直接在模板中使用 name，age了，表示先使用toRefs把目标对象的每个属性都变成响应式，然后使用...扩展运算符把对象每个属性都提取出来
                 changeToRefs2
             }
         },

@@ -7,7 +7,7 @@
     import {
         defineComponent,
         ref,
-        onBeforeMount,
+        onBeforeMount, // 注意 vue3中的大部分生命周期都需要引入才能使用，setup不需要
         onMounted,
         onBeforeUpdate,
         onUpdated,
