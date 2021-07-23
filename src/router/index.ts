@@ -45,8 +45,8 @@ const routes: Array<RouteRecordRaw> = [
     component: Page5,
     children: [
       {
-        path: "c1",
-        name: "c1",
+        path: "",
+        name: "C1",
         component: C1,
       },
     ],

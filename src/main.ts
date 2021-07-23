@@ -2,6 +2,19 @@ import { createApp } from "vue"; // 引入vue文件，并导出createApp，创�
 import App from "./App.vue"; // 引入根组件(所有组件的父级组件)，你在页面上看到的内容基本都在这个组件里
 import router from "./router";
 import store from "./store/store";
+import NProgress from "nprogress"; // 进度条
+import "nprogress/nprogress.css"; //样式必须引入
+
+import "./style/global.less";
+// 加载全局样式（最好放到最后，方便去覆盖第三方样式）
+router.beforeEach((to, from, next) => {
+  NProgress.start();
+  next();
+});
+
+router.afterEach(() => {
+  NProgress.done();
+});
 
 const app = createApp(App); // 创建实例
 

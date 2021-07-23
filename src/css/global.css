@@ -1,0 +1,7 @@
+.title {
+  color: bisque;
+  font-size: 50px;
+}
+#nprogress .bar {
+  background: linear-gradient(90deg, #2ae0c8, #a2e1d4, #acf6ef, #fe6673, #e6e2c3, #e3c887, #fad8be, #fbb8ac, #bdf3d4, #cbf5fb) !important;
+}
