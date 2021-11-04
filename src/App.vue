@@ -1,6 +1,6 @@
 <template>
   <router-view v-slot="{ Component }">
-    <keep-alive include="Page2,Page3,Page5">
+    <keep-alive include="Page1,Page2">
       <component :is="Component" />
     </keep-alive>
   </router-view>
@@ -14,12 +14,9 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-// 暴露出去一个定义好的组件，export default暴露出去的组件，导入时可以自定义名字
+
 export default defineComponent({
-  // defineComponent函数,目的是定义一个组件,内部可以传入一个配置对象
-  name: "App", // 当前组件的名字是App
-  components: {
-    // 注册组件
-  },
+  name: "App",
+  components: {},
 });
 </script>

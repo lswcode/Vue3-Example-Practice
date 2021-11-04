@@ -10,7 +10,7 @@
 import { defineComponent, reactive } from "vue";
 
 export default defineComponent({
-  name: "Page1",
+  name: "",
   setup() {
     const state = reactive({
       //定义state用来接收reactive方法返回的响应式代理对象
