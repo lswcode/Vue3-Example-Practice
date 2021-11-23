@@ -29,6 +29,20 @@ export default defineComponent({
         console.log("旧的值: ", oldValue, "----", "新的值: ", newValue);
       }
     );
+    watch(
+      [() => state.age, () => state.name], //  监听多个数据，使用数组格式
+      (newValue, oldValue) => {
+        // 监听数组格式，newValue和oldValue的值也是数组
+        console.log(
+          "监听多个数据：",
+          "旧的值: ",
+          oldValue,
+          "----",
+          "新的值: ",
+          newValue
+        );
+      }
+    );
     const update = () => {
       state.name += "改变";
       state.age += 1;
