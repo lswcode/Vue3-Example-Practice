@@ -17,30 +17,22 @@ export default defineComponent({
     });
     watch(
       state, //  注意: watch只能侦听响应式数据，state.name不算响应式数据，需要使用函数格式才能监听对象的属性
-      (newValue, oldValue) => {
+      (n, o) => {
         //这两个参数也可以不写，第一个是变化后的新数据，第二个是原数据
-        console.log("新的值: ", newValue);
+        console.log(n, o);
       }
     );
     watch(
-      () => state.age, //  监听对象中的属性时，使用函数格式return对象属性，当函数内只有一行return代码时，可以省略花括号和return
-      (newValue, oldValue) => {
-        //这两个参数也可以不写，第一个是变化后的新数据，第二个是原数据
-        console.log("旧的值: ", oldValue, "----", "新的值: ", newValue);
+      () => state.age, //  监听对象中的属性时，使用函数格式，return对象属性
+      (n, o) => {
+        console.log("旧的值: ", o, "----", "新的值: ", n);
       }
     );
     watch(
       [() => state.age, () => state.name], //  监听多个数据，使用数组格式
-      (newValue, oldValue) => {
-        // 监听数组格式，newValue和oldValue的值也是数组
-        console.log(
-          "监听多个数据：",
-          "旧的值: ",
-          oldValue,
-          "----",
-          "新的值: ",
-          newValue
-        );
+      (n, o) => {
+        // 监听数组时，n和o的值也是数组
+        console.log("监听多个数据：", "旧的值: ", o, "----", "新的值: ", n);
       }
     );
     const update = () => {
@@ -63,7 +55,7 @@ export default defineComponent({
 //  如果需要同时监听多个值，使用数组格式
 // watch(
 //   [first,second],
-//  ([newFirst,newSecond], [oldFirst,oldSecond]) => { 回调函数中第一个数组为监听的数组的新值 ....
+//  ([nFirst,nSecond], [oFirst,oSecond]) => { 回调函数中第一个数组为监听的数组的新值 ....
 //    // .....
 //   },
 // );

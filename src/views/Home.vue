@@ -9,6 +9,7 @@
     <router-link class="a" to='/shallow'>shallow</router-link>
     <router-link class="a" to='/toRef'>toRef</router-link>
     <router-link class="a" to='/toRefs'>toRefs</router-link>
+    <router-link class="a" to='/test'>test</router-link>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <h2>生命周期</h2>
   <h4>msg:{{ msg }}</h4>
-  <div @click="update">更新数据</div>
+  <button @click="update">更新数据</button>
 </template>
 <script lang="ts">
 import {
@@ -15,44 +15,38 @@ import {
   onUnmounted,
 } from "vue";
 export default defineComponent({
-  name: "Page4",
+  name: "LifeCycle",
   // vue2.x中的生命周期钩子
-  beforeCreate() {
-    console.log("2.x中的beforeCreate...");
-  },
-  created() {
-    console.log("2.x中的created...");
-  },
-  beforeMount() {
-    console.log("2.x中的beforeMount...");
-  },
-  mounted() {
-    console.log("2.x中的mounted...");
-  },
-  beforeUpdate() {
-    console.log("2.x中的beforeUpdate...");
-  },
-  updated() {
-    console.log("2.x中的updated...");
-  },
-  // vue2.x中的beforeDestroy和destroyed这两个生命周期回调已经在vue3中改名了,所以,不能再使用了
-  beforeUnmount() {
-    console.log("2.x中的beforeUnmount...");
-  },
-  unmounted() {
-    console.log("2.x中的unmounted...");
-  },
+  // beforeCreate() {
+  //   console.log("2.x中的beforeCreate...");
+  // },
+  // created() {
+  //   console.log("2.x中的created...");
+  // },
+  // beforeMount() {
+  //   console.log("2.x中的beforeMount...");
+  // },
+  // mounted() {
+  //   console.log("2.x中的mounted...");
+  // },
+  // beforeUpdate() {
+  //   console.log("2.x中的beforeUpdate...");
+  // },
+  // updated() {
+  //   console.log("2.x中的updated...");
+  // },
+  // // vue2.x中的beforeDestroy和destroyed这两个生命周期回调已经在vue3中改名了,所以,不能再使用了
+  // beforeUnmount() {
+  //   console.log("2.x中的beforeUnmount...");
+  // },
+  // unmounted() {
+  //   console.log("2.x中的unmounted...");
+  // },
 
   // vue3中的生命周期
   setup() {
     console.log("3.0中的setup");
-    // 响应式的数据
-    const msg = ref("abc");
-    // 按钮点击事件的回调
-    const update = () => {
-      msg.value += "-";
-      console.log("-----------------------------------------------");
-    };
+
     onBeforeMount(() => {
       console.log("3.0中的onBeforeMount");
     });
@@ -60,6 +54,7 @@ export default defineComponent({
       console.log("3.0中的onMounted");
     });
     onBeforeUpdate(() => {
+      console.log("-----------------------------------------------");
       console.log("3.0中的onBeforeUpdate");
     });
     onUpdated(() => {
@@ -71,7 +66,11 @@ export default defineComponent({
     onUnmounted(() => {
       console.log("3.0中的onUnmounted");
     });
-
+    // --------测试页面更新的生命周期---------------------------------------------------
+    const msg = ref("abc");
+    const update = () => {
+      msg.value += "-";
+    };
     return {
       msg,
       update,

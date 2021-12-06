@@ -9,6 +9,7 @@ import Deep from "@/views/6-deep.vue";
 import Shallow from "@/views/7-shallow.vue";
 import ToRef from "@/views/8-toRef.vue";
 import ToRefs from "@/views/9-toRefs.vue";
+import Test from "@/views/10-test.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -60,6 +61,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/toRefs",
     name: "ToRefs",
     component: ToRefs,
+  },
+  {
+    path: "/test",
+    name: "Test",
+    component: Test,
   },
 ];
 
