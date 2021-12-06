@@ -7,6 +7,9 @@ import Watch from "@/views/4-watch.vue";
 import LifeCycle from "@/views/5-lifeCycle.vue";
 import Deep from "@/views/6-deep.vue";
 import Shallow from "@/views/7-shallow.vue";
+import ToRef from "@/views/8-toRef.vue";
+import ToRefs from "@/views/9-toRefs.vue";
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -47,6 +50,16 @@ const routes: Array<RouteRecordRaw> = [
     path: "/shallow",
     name: "Shallow",
     component: Shallow,
+  },
+  {
+    path: "/toRef",
+    name: "ToRef",
+    component: ToRef,
+  },
+  {
+    path: "/toRefs",
+    name: "ToRefs",
+    component: ToRefs,
   },
 ];
 

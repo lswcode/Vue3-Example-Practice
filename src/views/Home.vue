@@ -7,6 +7,8 @@
     <router-link class="a" to='/lifeCycle'>lifeCycle</router-link>
     <router-link class="a" to='/deep'>deep</router-link>
     <router-link class="a" to='/shallow'>shallow</router-link>
+    <router-link class="a" to='/toRef'>toRef</router-link>
+    <router-link class="a" to='/toRefs'>toRefs</router-link>
   </div>
 </template>
 
