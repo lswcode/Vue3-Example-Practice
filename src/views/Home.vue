@@ -10,13 +10,16 @@
     <router-link class="a" to='/toRef'>toRef</router-link>
     <router-link class="a" to='/toRefs'>toRefs</router-link>
     <router-link class="a" to='/test'>test</router-link>
+    <TeleportCom />
   </div>
 </template>
 
 <script lang='ts'>
+import TeleportCom from "@/components/TeleportCom.vue";
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "Home",
+  components: { TeleportCom },
   setup() {
     return {};
   },
