@@ -6,7 +6,7 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, watch, reactive } from "vue";
+import { defineComponent, watch, reactive, ref } from "vue";
 
 export default defineComponent({
   name: "",
@@ -16,7 +16,7 @@ export default defineComponent({
       age: 18,
     });
     watch(
-      state, //  注意: watch只能侦听响应式数据，state.name不算响应式数据，需要使用函数格式才能监听对象的属性
+      state, //  注意: watch只能侦听响应式数据，state.name不算响应式数据，需要使用函数格式才能监听响应式对象的属性
       (n, o) => {
         //这两个参数也可以不写，第一个是变化后的新数据，第二个是原数据
         console.log(n, o);
