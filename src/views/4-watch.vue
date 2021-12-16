@@ -6,7 +6,7 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, watch, reactive, ref } from "vue";
+import { defineComponent, watch, reactive } from "vue";
 
 export default defineComponent({
   name: "",

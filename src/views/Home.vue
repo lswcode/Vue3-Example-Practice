@@ -11,15 +11,17 @@
     <router-link class="a" to='/toRefs'>toRefs</router-link>
     <router-link class="a" to='/test'>test</router-link>
     <TeleportCom />
+    <Watch :obj='obj' />
   </div>
 </template>
 
 <script lang='ts'>
 import TeleportCom from "@/components/TeleportCom.vue";
+import Watch from "@/views/4-watch.vue";
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "Home",
-  components: { TeleportCom },
+  components: { TeleportCom, Watch },
   setup() {
     return {};
   },
